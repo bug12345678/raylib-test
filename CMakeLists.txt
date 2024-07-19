@@ -7,8 +7,6 @@ project(raylib_test LANGUAGES C)
 
 include(FetchContent)
 
-set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE) # don't build the supplied examples
-
 set(RAYLIB_VERSION 5.0)
 FetchContent_Declare(
   raylib
