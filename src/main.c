@@ -8,7 +8,6 @@ int posY;
 
 const int vel = 250;
 
-
 struct GameSquare{
   int posX;
   int posY;
