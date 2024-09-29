@@ -17,7 +17,7 @@ FetchContent_Declare(
 set(BUILD_EXAMPLES OFF CACHE INTERNAL "")
 FetchContent_MakeAvailable(raylib)
 
-set(SOURCE_FILES src/main.c)
+set(SOURCE_FILES src/main.c src/gameinit.c src/gameinit.h src/gamesquare.c src/gamesquare.h src/player.h src/player.c src/render.c src/render.h)
 
 add_executable(raylib_test ${SOURCE_FILES})
 
