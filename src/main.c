@@ -3,8 +3,6 @@
 #include "player.h"
 #include "gameinit.h"
 
-extern struct GameSquare player;
-
 int main(void){
   initGame();
     
