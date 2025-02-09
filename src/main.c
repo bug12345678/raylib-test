@@ -9,7 +9,7 @@ typedef struct{
 
 const int width = 800;
 const int height = 600;
-const char *title = "Test";
+const char *title = "Bing Chilling";
 Camera2D camera = { 0 };
 entity player = {(float)width / 2.0f, (float)height / 2.0f, 50, 50};
 
