@@ -16,39 +16,36 @@ entity player = {(float)width / 2.0f, (float)height / 2.0f, 50, 50};
 void GameInit()
 {
   InitWindow(width, height, title);
-  SetTargetFPS(60);
 }
 
 void GamePlayerMove()
 {
   if(IsKeyDown(KEY_LEFT)){
-    player.x -= 100.0f * GetFrameTime();
+    camera.target.x -= 100.0f * GetFrameTime();
     }
   if(IsKeyDown(KEY_RIGHT)){
-    player.x += 100.0f * GetFrameTime();
+    camera.target.x += 100.0f * GetFrameTime();
     }
-  }    
-
-void GameCamera()
-{
-  camera.target = (Vector2){player.x, player.y};
-  BeginMode2D(camera);
-  DrawRectangle((int)player.x, (int)player.y, player.width, player.height, RED);
-  EndMode2D();
-}
+  }
 
 void GameRender()
 {
   BeginDrawing();
   ClearBackground(WHITE);
-  GameCamera();
+  DrawRectangle(100, 100, 100, 100, RED);
+
+  //camera.target = (Vector2){player.x, player.y};
+  /* Allt här i är stilla i världen, kameran rör på sig i förhållande till dessa. */
+  BeginMode2D(camera);
+  DrawRectangle((int)player.x, (int)player.y, player.width, player.height, RED);
+  EndMode2D();
+
   EndDrawing();
 }
 
 void GameLoop()
 {
   while(!WindowShouldClose()){
-    GameCamera();
     GamePlayerMove();
     GameRender();
   }
