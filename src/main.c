@@ -1,4 +1,5 @@
 #include "/home/fjodor/devel/raylib-test/_deps/raylib-src/src/raylib.h"
+
 typedef struct{
   float x;
   float y;
@@ -58,13 +59,12 @@ void GameEnd()
   CloseWindow();
 }
 
-int main(int argc, char *argv[])
+int main()
 {
   camera.target = (Vector2){player.x, player.y};
   camera.offset = (Vector2){(float)width / 2.0f, (float)height/ 2.0f};
   camera.zoom = 1;
   camera.rotation = 0;
-
 
   GameInit();
   GameLoop();
